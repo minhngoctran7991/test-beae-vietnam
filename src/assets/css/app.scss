@@ -1,0 +1,7 @@
+html, body{
+  @apply font-Poppins font-normal text-base text-black;
+}
+@import 'font';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
