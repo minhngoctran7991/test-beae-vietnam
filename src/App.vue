@@ -1,13 +1,13 @@
 <template>
   <div class="max-w-[1200px] mx-auto">
-    <tab-test />
+    <tabs-slider />
     <gallery-image />
   </div>
 </template>
 <script>
 export default {
   components: {
-    TabTest: () => import('./components/TabTest'),
+    TabsSlider: () => import('./components/TabsSlider'),
     GalleryImage: () => import('./components/GalleryImage'),
   },
 }

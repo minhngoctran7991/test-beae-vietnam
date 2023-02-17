@@ -3,7 +3,7 @@
     <div class="md:grid md:grid-cols-4 relative">
       <div v-for="(item, index) in listItemGroup" :key="`listGroup${index}`" 
           @click="typeShow = item.value"
-          class="rounded-t-[25px] rounded-b-[25px] md:rounded-b-none p-[10px] md:p-8 hover:bg-primary"
+          class="rounded-t-[25px] rounded-b-[25px] md:rounded-b-none p-[10px] md:p-8 hover:bg-primary bg-primary md:bg-transparent mt-[10px] md:mt-0 cursor-pointer"
           :class="{ active: typeShow === item.value }"
       >
         <div class="rounded-[10px] shadow-sm bg-white flex md:flex-col justify-between md:justify-center pb-[17px] md:pb-0 pl-[30px] md:pl-0 pt-[13px] md:pt-[23px] md:pb-[23px] pr-7 md:pr-0">
@@ -15,20 +15,22 @@
           </div> 
             <img class="block md:hidden" src="../assets/icon/ep_arrow-down-bold.svg" />
         </div>
-        <group-item v-if="typeShow === 'pencil' && typeShow === item.value" class="block md:hidden" />
+        <tab-child v-if="typeShow === 'pencil' && typeShow === item.value" class="block md:hidden" />
+        <div v-if="typeShow === 'markers' && typeShow === item.value" class="block md:hidden bg-primary">Markers</div>
+        <div v-if="typeShow === 'drawing-colors' && typeShow === item.value" class="block md:hidden bg-primary">Drawing Colors</div>
+        <div v-if="typeShow === 'notebooks' && typeShow === item.value" class="block md:hidden bg-primary">Notebooks</div>
       </div>
     </div>
-    <group-item class="hidden md:block" />
-    <div class="flex justify-center mt-[50px]">
-      <div class="rounded-full bg-black w-[15px] h-[15px] mr-[15px]"></div>
-      <div class="rounded-full bg-[#333333] opacity-25 w-[15px] h-[15px]"></div>
-    </div>
+    <tab-child v-if="typeShow === 'pencil'" class="hidden md:block" />
+    <div v-if="typeShow === 'markers'">Markers</div>
+    <div v-if="typeShow === 'drawing-colors'">Drawing Colors</div>
+    <div v-if="typeShow === 'notebooks'">Notebooks</div>
   </div>
 </template>
 <script>
 export default {
   components: {
-    GroupItem: () => import('./GroupItem'),
+    TabChild: () => import('./TabChild'),
   },
   data() {
     return {

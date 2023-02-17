@@ -1,17 +1,14 @@
 <template>
-  <div class="maw-w-[1200px] mx-auto mt-[60px] md:mt-[100px]">
+  <div class="maw-w-[1200px] mx-auto">
     <swiper
       :options="swiperOptions"
       class="swiper-custom"
     >
       <swiper-slide>
-        <gallery-item />
+        <tab-item />
       </swiper-slide>
       <swiper-slide>
-        <gallery-item />
-      </swiper-slide>
-      <swiper-slide>
-        <gallery-item />
+        <tab-item />
       </swiper-slide>
       <div slot="pagination" class="swiper-pagination"></div>
     </swiper>
@@ -30,7 +27,7 @@
     components: {
       Swiper,
       SwiperSlide,
-      GalleryItem: () => import('./GalleryItem'),
+      TabItem: () => import('./TabItem'),
     },
     data(){
       return {
@@ -53,3 +50,4 @@
     },
   };
 </script>
+  
