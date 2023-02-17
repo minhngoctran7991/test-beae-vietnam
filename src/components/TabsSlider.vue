@@ -34,7 +34,7 @@
         swiperOptions: {
         spaceBetween: 0,
         slidesPerView: 1,
-        loop: true,
+        // loop: true,
         centeredSlides: true,
         pagination: { clickable: true, el: '.swiper-pagination' },
       },

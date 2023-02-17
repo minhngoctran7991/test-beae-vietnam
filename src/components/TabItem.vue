@@ -16,15 +16,15 @@
             <img class="block md:hidden" src="../assets/icon/ep_arrow-down-bold.svg" />
         </div>
         <tab-child v-if="typeShow === 'pencil' && typeShow === item.value" class="block md:hidden" />
-        <div v-if="typeShow === 'markers' && typeShow === item.value" class="block md:hidden bg-primary">Markers</div>
-        <div v-if="typeShow === 'drawing-colors' && typeShow === item.value" class="block md:hidden bg-primary">Drawing Colors</div>
-        <div v-if="typeShow === 'notebooks' && typeShow === item.value" class="block md:hidden bg-primary">Notebooks</div>
+        <div v-if="typeShow === 'markers' && typeShow === item.value" class="block md:hidden bg-primary min-h-[717px] bg-primary">Markers</div>
+        <div v-if="typeShow === 'drawing-colors' && typeShow === item.value" class="block md:hidden bg-primary min-h-[717px] bg-primary">Drawing Colors</div>
+        <div v-if="typeShow === 'notebooks' && typeShow === item.value" class="block md:hidden bg-primary min-h-[717px] bg-primary">Notebooks</div>
       </div>
     </div>
     <tab-child v-if="typeShow === 'pencil'" class="hidden md:block" />
-    <div v-if="typeShow === 'markers'">Markers</div>
-    <div v-if="typeShow === 'drawing-colors'">Drawing Colors</div>
-    <div v-if="typeShow === 'notebooks'">Notebooks</div>
+    <div v-if="typeShow === 'markers'" class="hidden md:block min-h-[500px] bg-primary">Markers</div>
+    <div v-if="typeShow === 'drawing-colors'" class="hidden md:block min-h-[500px] bg-primary">Drawing Colors</div>
+    <div v-if="typeShow === 'notebooks'" class="hidden md:block min-h-[500px] bg-primary">Notebooks</div>
   </div>
 </template>
 <script>
